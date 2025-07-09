@@ -942,7 +942,7 @@ import styles from '@/styles/menu.module.css';
 import { useState } from 'react';
 import Food from './food';
 import ShoppingCart from './shoppingCart';
-import menuItems from '@/pages/data/menuItems';
+import menuItems from '@/data/menuItems';
 
 const categories = ['پیش غذا', 'نوشیدنی', 'غذای اصلی'];
 

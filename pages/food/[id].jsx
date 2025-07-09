@@ -52,7 +52,7 @@
 
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import menuItems from '../data/menuItems';
+import menuItems from '../../data/menuItems';
 import Image from 'next/image';
 
 const fadeInStyle = {
