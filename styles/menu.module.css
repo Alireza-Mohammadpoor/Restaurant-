@@ -1,0 +1,102 @@
+.menuContainer {
+  direction: rtl;
+  font-family: 'Vazirmatn', sans-serif;
+  padding: 2rem;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  font-family: 'Shabnam', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 80%;
+  margin: 0 auto 2rem auto;
+}
+
+.menuLayout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.foodSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+  padding: 0.5rem;
+  grid-column: 2;
+  justify-content: end;
+}
+
+.foodWrapper {
+  background: #1e1e1e;
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+  color: white;
+}
+
+.cartSection {
+  grid-column: 1;
+  position: sticky;
+  top: 2rem;
+}
+
+/* === Mobile Styles === */
+.mobileLayout {
+  display: none;
+}
+
+.mobileFooter {
+  display: none;
+}
+
+.activeTab {
+  color: hsl(52, 92%, 58%) !important;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .menuLayout {
+    display: none;
+  }
+
+  .mobileLayout {
+    display: block;
+  }
+
+  .foodSection,
+  .cartSection {
+    grid-column: auto;
+    padding-bottom: 5rem;
+  }
+
+  .mobileFooter {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    margin: 0;
+    background-color: #111;
+    justify-content: space-around;
+    padding: 0.75rem 0;
+    border-top: 1px solid #444;
+    z-index: 1000;
+  }
+
+  .mobileFooter button {
+    flex: 1;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    font-family: 'Vazirmatn', sans-serif;
+  }
+}
