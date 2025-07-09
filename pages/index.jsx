@@ -4,7 +4,7 @@
 import Menu from '@/components/menu';
 import Head from 'next/head';
 // import 'globals.css'
-import '@/styles/globals.css'
+
 import NavBar from '@/components/nav';
 import Footer from '@/components/footer';
 
