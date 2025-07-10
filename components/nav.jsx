@@ -443,15 +443,18 @@
 import React from 'react';
 // import styles from './nav.module.css';
 import styles from '@/styles/nav.module.css'
+// import Image from 'next/image';
 
 export default function NavBar() {
   return (
     <div className={styles.navbarContainer}>
       <img
-        src="/img/pexels-marios-gkortsilas-284432004-13983276.jpg"
+        src="/img/4.jpg"
         alt="navbar"
         className={styles.navbarImage}
       />
+
+
 
       <div className={styles.navbarOverlay} />
 
