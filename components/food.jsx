@@ -895,6 +895,111 @@
 
 
 
+// 'use client';
+
+// import React from 'react';
+// import useCartStore from '@/store/useCart';
+// import { ShoppingCart } from 'lucide-react';
+// import Link from 'next/link';
+
+// export default function Food({ id, name, image, price, supplies }) {
+//   const addItem = useCartStore((state) => state.addItem);
+
+//   const handleAddToCart = () => {
+//     addItem({
+//       id,
+//       name,
+//       image,
+//       price,
+//       quantity: 1,
+//     });
+//   };
+
+//   return (
+//     <div
+//       style={{
+//         display: 'flex',
+//         alignItems: 'center',
+//         gap: '1rem',
+//         padding: '0.5rem 1rem',
+//         color: 'white',
+//         fontFamily: 'Vazir',
+//         maxWidth: '240px',
+//         borderRadius: '7px',
+//       }}
+//     >
+//       <img
+//         src={image}
+//         alt={name}
+//         style={{
+//           width: '80px',
+//           height: '80px',
+//           objectFit: 'cover',
+//           borderRadius: '8px',
+//         }}
+//       />
+
+//       <div style={{ flex: 1 }}>
+//         <h3 style={{ margin: 0 }}>
+//           <Link
+//             href={`/food/${id}`}
+//             style={{
+//               color: 'hsl(52, 92%, 40%)',
+//               textDecoration: 'none',
+//               fontWeight: 'bold',
+//             }}
+//           >
+//             {name}
+//           </Link>
+//         </h3>
+
+//         <h6 style={{ margin: '4px 0', color: '#ccc', fontSize : "0.68rem", fontWeight : "500" }}>
+//           {supplies?.join(', ')}
+//         </h6>
+
+//         {/* Price and Add-to-Cart button side by side */}
+//         <div
+//           style={{
+//             display: 'flex',
+//             alignItems: 'center',
+//             gap: '1.9rem',
+//             marginTop: '4px',
+//           }}
+//         >
+//           <p style={{ margin: 0, color: '#aaa', fontWeight: '600', fontSize : "0.8rem" }}>
+//             {price.toLocaleString()} تومان
+//           </p>
+//           <button
+//             onClick={handleAddToCart}
+//             style={{
+//               background: 'hsl(52, 92%, 38%)',
+//               border: 'none',
+//               borderRadius: '6px',
+//               padding: '0.3rem 0.6rem',
+//               cursor: 'pointer',
+//               color: 'white',
+//               fontWeight: '800',
+//               fontSize: '0.9rem',
+//               display: 'flex',
+//               alignItems: 'center',
+//               justifyContent: 'center',
+//             }}
+//           >
+//             <ShoppingCart size={14} />
+//           </button>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+
+
+
+
+
+
+
 'use client';
 
 import React from 'react';
@@ -904,6 +1009,8 @@ import Link from 'next/link';
 
 export default function Food({ id, name, image, price, supplies }) {
   const addItem = useCartStore((state) => state.addItem);
+  const items = useCartStore((state) => state.items);
+  const quantity = items.find((item) => item.id === id)?.quantity || 0;
 
   const handleAddToCart = () => {
     addItem({
@@ -940,20 +1047,42 @@ export default function Food({ id, name, image, price, supplies }) {
       />
 
       <div style={{ flex: 1 }}>
-        <h3 style={{ margin: 0 }}>
-          <Link
-            href={`/food/${id}`}
-            style={{
-              color: 'hsl(52, 92%, 40%)',
-              textDecoration: 'none',
-              fontWeight: 'bold',
-            }}
-          >
-            {name}
-          </Link>
-        </h3>
+        {/* Name and quantity badge row */}
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <h3 style={{ margin: 0 }}>
+            <Link
+              href={`/food/${id}`}
+              style={{
+                color: 'hsl(52, 92%, 40%)',
+                textDecoration: 'none',
+                fontWeight: 'bold',
+                fontSize: '1rem',
+              }}
+            >
+              {name}
+            </Link>
+          </h3>
 
-        <h6 style={{ margin: '4px 0', color: '#ccc', fontSize : "0.68rem", fontWeight : "500" }}>
+          {quantity > 0 && (
+            <span
+              style={{
+                backgroundColor: 'hsl(52, 92%, 38%)',
+                color: 'black',
+                fontSize: '0.7rem',
+                padding: '3px 3px',
+                borderRadius: '12px',
+                fontWeight: '600',
+                minWidth: '24px',
+                textAlign: 'center',
+                marginRight: '8px',
+              }}
+            >
+              {quantity}
+            </span>
+          )}
+        </div>
+
+        <h6 style={{ margin: '4px 0', color: '#ccc', fontSize: '0.68rem', fontWeight: '500' }}>
           {supplies?.join(', ')}
         </h6>
 
@@ -966,7 +1095,7 @@ export default function Food({ id, name, image, price, supplies }) {
             marginTop: '4px',
           }}
         >
-          <p style={{ margin: 0, color: '#aaa', fontWeight: '600', fontSize : "0.8rem" }}>
+          <p style={{ margin: 0, color: '#aaa', fontWeight: '600', fontSize: '0.8rem' }}>
             {price.toLocaleString()} تومان
           </p>
           <button

@@ -1,3 +1,199 @@
+// const menuItems = [
+//   // 🟡 پیش غذا (6 items)
+//   {
+//     id: 'ash',
+//     name: 'آش رشته',
+//     price: 70000,
+//     supplies: ['حبوبات', 'رشته', 'نعنا داغ', 'کشک'],
+//     time: '۳۰ دقیقه',
+//     rate: 4.7,
+//     image: '/img/1.jpg',
+//     category: 'پیش غذا',
+//   },
+//   {
+//     id: 'soup',
+//     name: 'سوپ جو',
+//     price: 60000,
+//     supplies: ['جو', 'هویج', 'مرغ', 'خامه'],
+//     time: '۲۰ دقیقه',
+//     rate: 4.4,
+//     image: '/images/soup.jpg',
+//     category: 'پیش غذا',
+//   },
+//   {
+//     id: 'salad-fasl',
+//     name: 'سالاد فصل',
+//     price: 50000,
+//     supplies: ['کاهو', 'گوجه', 'خیار', 'هویج'],
+//     time: '۱۰ دقیقه',
+//     rate: 4.6,
+//     image: '/images/salad.jpg',
+//     category: 'پیش غذا',
+//   },
+//   {
+//     id: 'salad-caesar',
+//     name: 'سالاد سزار',
+//     price: 85000,
+//     supplies: ['کاهو', 'مرغ گریل', 'نان تست', 'سس مخصوص'],
+//     time: '۱۵ دقیقه',
+//     rate: 4.8,
+//     image: '/images/caesar.jpg',
+//     category: 'پیش غذا',
+//   },
+//   {
+//     id: 'hummus',
+//     name: 'حمص',
+//     price: 55000,
+//     supplies: ['نخود', 'روغن زیتون', 'کنجد', 'سیر'],
+//     time: '۱۲ دقیقه',
+//     rate: 4.3,
+//     image: '/images/hummus.jpg',
+//     category: 'پیش غذا',
+//   },
+//   {
+//     id: 'mast-khiar',
+//     name: 'ماست و خیار',
+//     price: 35000,
+//     supplies: ['ماست', 'خیار', 'نعنا', 'کشمش'],
+//     time: '۵ دقیقه',
+//     rate: 4.2,
+//     image: '/images/mastkhiar.jpg',
+//     category: 'پیش غذا',
+//   },
+
+//   // 🔵 نوشیدنی (6 items)
+//   {
+//     id: 'cola',
+//     name: 'نوشابه',
+//     price: 10000,
+//     supplies: ['آب', 'قند', 'گاز'],
+//     time: '۲ دقیقه',
+//     rate: 4.1,
+//     image: '/images/cola.jpg',
+//     category: 'نوشیدنی',
+//   },
+//   {
+//     id: 'doogh',
+//     name: 'دوغ محلی',
+//     price: 12000,
+//     supplies: ['ماست', 'آب', 'نعنا'],
+//     time: '۲ دقیقه',
+//     rate: 4.5,
+//     image: '/images/doogh.jpg',
+//     category: 'نوشیدنی',
+//   },
+//   {
+//     id: 'ab-miveh',
+//     name: 'آب میوه طبیعی',
+//     price: 20000,
+//     supplies: ['پرتقال', 'سیب', 'انگور'],
+//     time: '۵ دقیقه',
+//     rate: 4.4,
+//     image: '/images/juice.jpg',
+//     category: 'نوشیدنی',
+//   },
+//   {
+//     id: 'chai',
+//     name: 'چای',
+//     price: 8000,
+//     supplies: ['چای خشک', 'آب جوش'],
+//     time: '۵ دقیقه',
+//     rate: 4.3,
+//     image: '/images/tea.jpg',
+//     category: 'نوشیدنی',
+//   },
+//   {
+//     id: 'coffee',
+//     name: 'قهوه',
+//     price: 15000,
+//     supplies: ['پودر قهوه', 'آب'],
+//     time: '۷ دقیقه',
+//     rate: 4.6,
+//     image: '/images/coffee.jpg',
+//     category: 'نوشیدنی',
+//   },
+//   {
+//     id: 'milkshake',
+//     name: 'میلک‌شیک وانیلی',
+//     price: 18000,
+//     supplies: ['شیر', 'وانیل', 'یخ'],
+//     time: '۸ دقیقه',
+//     rate: 4.5,
+//     image: '/images/milkshake.jpg',
+//     category: 'نوشیدنی',
+//   },
+
+//   // 🔴 غذای اصلی (6 items)
+//   {
+//     id: 'kabab-koobideh',
+//     name: 'چلو کباب کوبیده',
+//     price: 150000,
+//     supplies: ['گوشت گوسفندی', 'برنج ایرانی', 'پیاز', 'زعفران'],
+//     time: '۲۰ دقیقه',
+//     rate: 4.8,
+//     image: '/images/koobideh.jpg',
+//     category: 'غذای اصلی',
+//   },
+//   {
+//     id: 'morgh',
+//     name: 'زرشک پلو با مرغ',
+//     price: 130000,
+//     supplies: ['برنج', 'مرغ', 'زرشک', 'زعفران'],
+//     time: '۲۵ دقیقه',
+//     rate: 4.5,
+//     image: '/images/morgh.jpg',
+//     category: 'غذای اصلی',
+//   },
+//   {
+//     id: 'ghormeh',
+//     name: 'قرمه سبزی',
+//     price: 145000,
+//     supplies: ['گوشت', 'لوبیا', 'سبزی', 'لیمو عمانی'],
+//     time: '۴۰ دقیقه',
+//     rate: 4.9,
+//     image: '/images/ghormeh.jpg',
+//     category: 'غذای اصلی',
+//   },
+//   {
+//     id: 'pizza-pepperoni',
+//     name: 'پیتزا پپرونی',
+//     price: 170000,
+//     supplies: ['خمیر', 'پنیر پیتزا', 'پپرونی', 'سس'],
+//     time: '۳۰ دقیقه',
+//     rate: 4.9,
+//     image: '/images/pepperoni.jpg',
+//     category: 'غذای اصلی',
+//   },
+//   {
+//     id: 'pasta-alfredo',
+//     name: 'پاستا آلفردو',
+//     price: 140000,
+//     supplies: ['پاستا', 'سس خامه‌ای', 'مرغ', 'پنیر'],
+//     time: '۲۰ دقیقه',
+//     rate: 4.7,
+//     image: '/images/alfredo.jpg',
+//     category: 'غذای اصلی',
+//   },
+//   {
+//     id: 'beef-burger',
+//     name: 'برگر گوشت',
+//     price: 130000,
+//     supplies: ['گوشت گوساله', 'پنیر', 'نان برگر', 'سس'],
+//     time: '۲۰ دقیقه',
+//     rate: 4.6,
+//     image: '/images/beefburger.jpg',
+//     category: 'غذای اصلی',
+//   },
+// ];
+
+// export default menuItems;
+
+
+
+
+
+
+
 const menuItems = [
   // 🟡 پیش غذا (6 items)
   {
@@ -7,7 +203,7 @@ const menuItems = [
     supplies: ['حبوبات', 'رشته', 'نعنا داغ', 'کشک'],
     time: '۳۰ دقیقه',
     rate: 4.7,
-    image: '/img/1.jpg',
+    image: '/img/ash.jpg', // ✔️ from Iranian site :contentReference[oaicite:1]{index=1}
     category: 'پیش غذا',
   },
   {
@@ -17,7 +213,7 @@ const menuItems = [
     supplies: ['جو', 'هویج', 'مرغ', 'خامه'],
     time: '۲۰ دقیقه',
     rate: 4.4,
-    image: '/images/soup.jpg',
+    image: '/img/oat-soup.jpg', // ✔️ Iranian red barley soup :contentReference[oaicite:2]{index=2}
     category: 'پیش غذا',
   },
   {
@@ -27,7 +223,7 @@ const menuItems = [
     supplies: ['کاهو', 'گوجه', 'خیار', 'هویج'],
     time: '۱۰ دقیقه',
     rate: 4.6,
-    image: '/images/salad.jpg',
+    image: '/img/salad-fasl-min.jpg', // backup image
     category: 'پیش غذا',
   },
   {
@@ -37,7 +233,7 @@ const menuItems = [
     supplies: ['کاهو', 'مرغ گریل', 'نان تست', 'سس مخصوص'],
     time: '۱۵ دقیقه',
     rate: 4.8,
-    image: '/images/caesar.jpg',
+    image: '/img/salad-sezar-1.jpg',
     category: 'پیش غذا',
   },
   {
@@ -47,7 +243,7 @@ const menuItems = [
     supplies: ['نخود', 'روغن زیتون', 'کنجد', 'سیر'],
     time: '۱۲ دقیقه',
     rate: 4.3,
-    image: '/images/hummus.jpg',
+    image: '/img/طرز-تهیه-حمص.jpg',
     category: 'پیش غذا',
   },
   {
@@ -57,7 +253,7 @@ const menuItems = [
     supplies: ['ماست', 'خیار', 'نعنا', 'کشمش'],
     time: '۵ دقیقه',
     rate: 4.2,
-    image: '/images/mastkhiar.jpg',
+    image: '/img/ماست-و-خیار-شیرازی-دستور-اصلی-عکس.jpg',
     category: 'پیش غذا',
   },
 
@@ -69,7 +265,7 @@ const menuItems = [
     supplies: ['آب', 'قند', 'گاز'],
     time: '۲ دقیقه',
     rate: 4.1,
-    image: '/images/cola.jpg',
+    image: '/img/soda.jpg',
     category: 'نوشیدنی',
   },
   {
@@ -79,7 +275,7 @@ const menuItems = [
     supplies: ['ماست', 'آب', 'نعنا'],
     time: '۲ دقیقه',
     rate: 4.5,
-    image: '/images/doogh.jpg',
+    image: '/img/doogh.jpeg',
     category: 'نوشیدنی',
   },
   {
@@ -89,7 +285,7 @@ const menuItems = [
     supplies: ['پرتقال', 'سیب', 'انگور'],
     time: '۵ دقیقه',
     rate: 4.4,
-    image: '/images/juice.jpg',
+    image: '/img/juice.jpg',
     category: 'نوشیدنی',
   },
   {
@@ -99,7 +295,7 @@ const menuItems = [
     supplies: ['چای خشک', 'آب جوش'],
     time: '۵ دقیقه',
     rate: 4.3,
-    image: '/images/tea.jpg',
+    image: '/img/tea.jpg',
     category: 'نوشیدنی',
   },
   {
@@ -109,7 +305,7 @@ const menuItems = [
     supplies: ['پودر قهوه', 'آب'],
     time: '۷ دقیقه',
     rate: 4.6,
-    image: '/images/coffee.jpg',
+    image: '/img/coffee.jpg',
     category: 'نوشیدنی',
   },
   {
@@ -119,7 +315,7 @@ const menuItems = [
     supplies: ['شیر', 'وانیل', 'یخ'],
     time: '۸ دقیقه',
     rate: 4.5,
-    image: '/images/milkshake.jpg',
+    image: '/img/milkshake_19447_16x9.webp',
     category: 'نوشیدنی',
   },
 
@@ -131,7 +327,7 @@ const menuItems = [
     supplies: ['گوشت گوسفندی', 'برنج ایرانی', 'پیاز', 'زعفران'],
     time: '۲۰ دقیقه',
     rate: 4.8,
-    image: '/images/koobideh.jpg',
+    image: '/img/kobideh.jpg',
     category: 'غذای اصلی',
   },
   {
@@ -141,7 +337,7 @@ const menuItems = [
     supplies: ['برنج', 'مرغ', 'زرشک', 'زعفران'],
     time: '۲۵ دقیقه',
     rate: 4.5,
-    image: '/images/morgh.jpg',
+    image: '/img/morgh.jpg',
     category: 'غذای اصلی',
   },
   {
@@ -151,7 +347,7 @@ const menuItems = [
     supplies: ['گوشت', 'لوبیا', 'سبزی', 'لیمو عمانی'],
     time: '۴۰ دقیقه',
     rate: 4.9,
-    image: '/images/ghormeh.jpg',
+    image: '/img/sabzi.jpg',
     category: 'غذای اصلی',
   },
   {
@@ -161,7 +357,7 @@ const menuItems = [
     supplies: ['خمیر', 'پنیر پیتزا', 'پپرونی', 'سس'],
     time: '۳۰ دقیقه',
     rate: 4.9,
-    image: '/images/pepperoni.jpg',
+    image: '/img/pepe.jpg',
     category: 'غذای اصلی',
   },
   {
@@ -171,7 +367,7 @@ const menuItems = [
     supplies: ['پاستا', 'سس خامه‌ای', 'مرغ', 'پنیر'],
     time: '۲۰ دقیقه',
     rate: 4.7,
-    image: '/images/alfredo.jpg',
+    image: 'https://images.unsplash.com/photo-1600891964599-f61ba0e24092',
     category: 'غذای اصلی',
   },
   {
@@ -181,7 +377,7 @@ const menuItems = [
     supplies: ['گوشت گوساله', 'پنیر', 'نان برگر', 'سس'],
     time: '۲۰ دقیقه',
     rate: 4.6,
-    image: '/images/beefburger.jpg',
+    image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd',
     category: 'غذای اصلی',
   },
 ];

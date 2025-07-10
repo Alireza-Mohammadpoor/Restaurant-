@@ -1,0 +1,155 @@
+/* id.module.css */
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.pageWrapper {
+  min-height: 100vh;
+  padding: 24px;
+  background-color: hsl(0, 0%, 10%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  max-width: 64rem;
+  width: 100%;
+  background-color: hsl(0, 0%, 15%);
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.15);
+  padding: 32px;
+  animation: fadeIn 0.7s ease forwards;
+  opacity: 0;
+  color: white;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.imageWrapper {
+  width: 100%;
+  max-width: 400px;
+  overflow: hidden;
+  border-radius: 24px;
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+.imageWrapperHover {
+  transform: scale(1.05);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  display: block;
+  border-radius: 24px;
+}
+
+.textContainer {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: white;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+}
+
+.ratingRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.star {
+  width: 24px;
+  height: 24px;
+  color: #FBBF24;
+}
+
+.ratingNumber {
+  font-weight: 600;
+  color: #FFD700;
+  font-size: 1.125rem;
+}
+
+.infoText {
+  font-size: 1.125rem;
+  color: #E5E7EB;
+  margin: 0;
+}
+
+.infoLabel {
+  font-weight: 600;
+  color: #FBBF24;
+}
+
+.suppliesContainer {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.supplyBadge {
+  background-color: rgba(251, 191, 36, 0.15);
+  color: #FBBF24;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  box-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
+}
+
+.loadingWrapper {
+  min-height: 100vh;
+  background-color: hsl(0, 0%, 10%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loadingText {
+  font-size: 1.25rem;
+  color: #E5E7EB;
+  animation: pulse 2s infinite;
+}
+
+.backButton {
+  align-self: flex-start;
+  background-color: transparent;
+  color: #FFFFFF;
+  border: none;
+  padding: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: Vazir;
+}
