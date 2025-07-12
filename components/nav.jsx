@@ -438,23 +438,84 @@
 
 
 
+// 'use client';
+
+// import React from 'react';
+// // import styles from './nav.module.css';
+// import styles from '@/styles/nav.module.css'
+// // import Image from 'next/image';
+
+// export default function NavBar() {
+//   return (
+//     <div className={styles.navbarContainer}>
+//       <img
+//         src="/img/4.jpg"
+//         alt="navbar"
+//         className={styles.navbarImage}
+//       />
+
+
+
+//       <div className={styles.navbarOverlay} />
+
+//       <div className={styles.navbarTextContainer}>
+//         <h1 className={styles.navbarHeading}>
+//           لحظات خوش همراه با طعم‌های <br />
+//           <span>ناب و اصیل</span>
+//         </h1>
+
+//         <p className={styles.navbarParagraph}>
+//           ما به کیفیت غذا اهمیت ویژه‌ای می‌دهیم؛ هر بشقاب با دقت و عشق تهیه شده تا رضایت شما را به‌دست آوریم.
+//           لحظاتی خوش و خاطره‌انگیز در کنار خانواده و دوستان را در محیطی گرم و صمیمی برای شما خلق می‌کنیم.
+//           از طعم‌های اصیل ایرانی لذت ببرید و با سرویس‌دهی بی‌نظیر ما، تجربه‌ای فراموش‌نشدنی را تجربه کنید.
+//           هر وعده غذایی، داستانی است از سنت، هنر آشپزی و مهمان‌نوازی که با دقت و هنر در کنار هم به‌وجود آمده است.
+//           منتظر حضور گرم شما هستیم تا لحظات شیرین زندگی را با هم شریک شویم.
+//         </p>
+
+//         <div className={styles.navbarButtonGroup}>
+//           <button className={styles.navbarButton}>
+//             <a href="#menu">منوی سفارش</a>
+//           </button>
+//         </div>
+//       </div>
+//     </div>
+	 
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
 'use client';
 
 import React from 'react';
-// import styles from './nav.module.css';
-import styles from '@/styles/nav.module.css'
-// import Image from 'next/image';
+import styles from '@/styles/nav.module.css';
 
 export default function NavBar() {
   return (
     <div className={styles.navbarContainer}>
+      {/* LOGO IN TOP LEFT */}
+      <img
+        src="/img/Brown_Simple_Circle_Restaurant_Logo-removebg-preview.png"
+        alt="logo"
+        className={styles.logo}
+      />
+
+      {/* BACKGROUND IMAGE */}
       <img
         src="/img/4.jpg"
         alt="navbar"
         className={styles.navbarImage}
       />
-
-
 
       <div className={styles.navbarOverlay} />
 

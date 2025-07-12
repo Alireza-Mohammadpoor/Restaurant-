@@ -102,3 +102,15 @@
   color: black;
   text-decoration: none;
 }
+
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100px;
+  height: auto;
+  z-index: 10;
+  filter: brightness(0) invert(1); /* turns dark colors white */
+}
+
