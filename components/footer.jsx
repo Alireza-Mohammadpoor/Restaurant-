@@ -59,11 +59,11 @@
 
 
 
-
 'use client'
+
 import styles from '@/styles/footer.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPhoneAlt, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
+import { faPhoneAlt, faMapMarkerAlt, faStar } from '@fortawesome/free-solid-svg-icons'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 export default function Footer() {
@@ -104,6 +104,11 @@ export default function Footer() {
 
         <div className={styles.bottom}>
           © {new Date().getFullYear()} تمامی حقوق محفوظ است.
+          <br />
+          <span className={styles.creator}>
+				طراحی و پیاده‌سازی شده توسط <strong className={styles.gradientText}>Mystery Dev <FontAwesomeIcon icon={faStar} /></strong>
+				</span>
+
         </div>
       </footer>
     </div>

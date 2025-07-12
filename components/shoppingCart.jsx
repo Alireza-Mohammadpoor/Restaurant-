@@ -580,7 +580,7 @@ export default function ShoppingCart() {
         {items.length === 0 ? (
           <p style={{ color: '#aaa', textAlign: 'center', padding: '2rem 0' }}>
             🧺 هنوز هیچ آیتمی به سبد خرید اضافه نکردید!<br />
-            خوشمزه‌ها منتظر شما هستن 😋
+            
           </p>
         ) : (
           <ul style={{ padding: 0, margin: 0, listStyle: 'none' }}>

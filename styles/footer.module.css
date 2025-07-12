@@ -67,12 +67,53 @@
   text-align: center;
   margin-top: 2rem;
   font-size: 0.8rem;
-  opacity: 0.8;
+  opacity: 0.9;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   padding-top: 1rem;
+  color: #eee;
+  direction: rtl;
 }
 
-/* Responsive: Only show contact column */
+/* Creator credit styling */
+.creator {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #ffffff;
+  font-style: italic;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.creator strong {
+  color: rgb(130, 40, 225);
+  font-weight: 700;
+}
+
+
+
+.gradientText {
+  background: linear-gradient(45deg, hsl(0, 0%, 99%), hsl(239, 81%, 55%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  display: inline-block;
+}
+
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .about,
   .hours {
