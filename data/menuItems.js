@@ -310,7 +310,7 @@ const menuItems = [
   },
   {
     id: 'milkshake',
-    name: 'میلک‌شیک وانیلی',
+    name: 'میلک‌شیک ',
     price: 18000,
     supplies: ['شیر', 'وانیل', 'یخ'],
     time: '۸ دقیقه',

@@ -1,0 +1,135 @@
+.foodCard {
+  position: relative;
+  background: linear-gradient(to bottom, #2c2c2c 0%, #1f1f1f 40%, #151515 80%, #0d0d0d 100%);
+  color: white;
+  font-family: Vazir;
+  padding: 0.6rem 2.5rem 3rem 2.5rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  min-width: 150px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.foodImage {
+  position: absolute;
+  top: -30px;
+  left: -20px;
+  width: 80px;
+  height: 80px;
+  border-radius: 100px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  border: 2px solid white;
+}
+
+.foodName {
+  margin: 0 0 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.6rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.foodNameLink {
+  color: hsl(52, 92%, 40%);
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+  margin-left: 10px;
+}
+
+.priceRating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+  gap: 20px;
+}
+
+.price {
+  margin: 0;
+  color: #aaa;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  font-size: 0.6rem;
+  margin-left: 10px;
+}
+
+.cartButton {
+  position: absolute;
+  bottom: -12px;
+  right: -15px;
+  background: hsl(52, 92%, 38%);
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
+  color: white;
+  font-weight: 800;
+  font-size: 0.98rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.orderText {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  line-height: 1;
+  border-bottom: 1px solid gray;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.75rem;
+  color: gray;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .foodCard {
+    padding: 0.8rem 1.5rem 3rem 1.5rem;
+  }
+
+  .foodImage {
+    top: -20px;
+    left: -10px;
+    width: 65px;
+    height: 65px;
+  }
+
+  .foodName {
+    font-size: 0.78rem;
+  }
+
+  .price {
+    font-size: 0.7rem;
+  }
+
+  .rating {
+    font-size: 0.5rem;
+  }
+
+  .cartButton {
+    bottom: -10px;
+    right: -10px;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .orderText {
+    font-size: 0.65rem;
+  }
+}

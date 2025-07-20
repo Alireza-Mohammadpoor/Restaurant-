@@ -1,0 +1,10 @@
+/* styles/fonts.css */
+.pacifico {
+  font-family: 'Pacifico', cursive;
+}
+
+.vazir {
+  font-family: 'Vazir', sans-serif;
+  color : "#ffffff";
+  color: hsl(0, 0%, 100%);
+}

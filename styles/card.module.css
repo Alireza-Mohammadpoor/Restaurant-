@@ -1,0 +1,159 @@
+.cartContainer {
+  background: #1e1e1e;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 480px;
+  margin: 2rem auto;
+  font-family: Vazir;
+}
+
+.cartHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.cartIcon {
+  margin-left: 0.5rem;
+  color: hsl(52, 92%, 43%);
+}
+
+.cartTitle {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.emptyText {
+  color: #aaa;
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.95rem;
+}
+
+.cartList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cartItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #2c2c2c;
+  padding: 0.5rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.itemImage {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.itemContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nameAndControls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.itemName {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.itemPrice {
+  font-size: 0.85rem;
+  color: #ccc;
+  margin-top: 0.25rem;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.iconButton {
+  background: #333;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 6px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.iconButton:hover {
+  background: #444;
+}
+
+.trashButton {
+  background: #f44336;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 6px;
+  color: white;
+  cursor: pointer;
+}
+
+.cartTotal {
+  margin-top: 1.5rem;
+  border-top: 1px solid #444;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.cartTotal strong {
+  font-size: 1.2rem;
+}
+
+.cartTotal p {
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  color: #aaa;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .cartContainer {
+    width: 90%;
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+
+  .nameAndControls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .itemName {
+    font-size: 0.95rem;
+  }
+
+  .itemPrice {
+    font-size: 0.8rem;
+  }
+
+  .cartTitle {
+    font-size: 1.3rem;
+  }
+
+  .cartTotal strong {
+    font-size: 1.05rem;
+  }
+}

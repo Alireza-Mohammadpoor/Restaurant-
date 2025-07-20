@@ -1000,14 +1000,522 @@
 
 
 
+// 'use client';
+
+// import React from 'react';
+// import useCartStore from '@/store/useCart';
+// import { ShoppingCart } from 'lucide-react';
+// import Link from 'next/link';
+
+// export default function Food({ id, name, image, price, supplies }) {
+//   const addItem = useCartStore((state) => state.addItem);
+//   const items = useCartStore((state) => state.items);
+//   const quantity = items.find((item) => item.id === id)?.quantity || 0;
+
+//   const handleAddToCart = () => {
+//     addItem({
+//       id,
+//       name,
+//       image,
+//       price,
+//       quantity: 1,
+//     });
+//   };
+
+//   return (
+//     <div
+//       style={{
+//         display: 'flex',
+//         alignItems: 'center',
+//         gap: '1rem',
+//         padding: '0.5rem 1rem',
+//         color: 'white',
+//         fontFamily: 'Vazir',
+//         maxWidth: '240px',
+//         borderRadius: '7px',
+//       }}
+//     >
+      // <img
+      //   src={image}
+      //   alt={name}
+      //   style={{
+      //     width: '80px',
+      //     height: '80px',
+      //     objectFit: 'cover',
+      //     borderRadius: '8px',
+      //   }}
+      // />
+
+//       <div style={{ flex: 1 }}>
+//         {/* Name and quantity badge row */}
+//         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+//           <h3 style={{ margin: 0 }}>
+//             <Link
+//               href={`/food/${id}`}
+//               style={{
+//                 color: 'hsl(52, 92%, 40%)',
+//                 textDecoration: 'none',
+//                 fontWeight: 'bold',
+//                 fontSize: '1rem',
+//               }}
+//             >
+//               {name}
+//             </Link>
+//           </h3>
+
+//           {quantity > 0 && (
+//             <span
+//               style={{
+//                 backgroundColor: 'hsl(52, 92%, 38%)',
+//                 color: 'black',
+//                 fontSize: '0.7rem',
+//                 padding: '3px 3px',
+//                 borderRadius: '12px',
+//                 fontWeight: '600',
+//                 minWidth: '24px',
+//                 textAlign: 'center',
+//                 marginRight: '8px',
+//               }}
+//             >
+//               {quantity}
+//             </span>
+//           )}
+//         </div>
+
+//         <h6 style={{ margin: '4px 0', color: '#ccc', fontSize: '0.68rem', fontWeight: '500' }}>
+//           {supplies?.join(', ')}
+//         </h6>
+
+//         {/* Price and Add-to-Cart button side by side */}
+//         <div
+//           style={{
+//             display: 'flex',
+//             alignItems: 'center',
+//             gap: '1.9rem',
+//             marginTop: '4px',
+//           }}
+//         >
+//           <p style={{ margin: 0, color: '#aaa', fontWeight: '600', fontSize: '0.8rem' }}>
+//             {price.toLocaleString()} تومان
+//           </p>
+//           <button
+//             onClick={handleAddToCart}
+//             style={{
+//               background: 'hsl(52, 92%, 38%)',
+//               border: 'none',
+//               borderRadius: '6px',
+//               padding: '0.3rem 0.6rem',
+//               cursor: 'pointer',
+//               color: 'white',
+//               fontWeight: '800',
+//               fontSize: '0.9rem',
+//               display: 'flex',
+//               alignItems: 'center',
+//               justifyContent: 'center',
+//             }}
+//           >
+//             <ShoppingCart size={14} />
+//           </button>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+
+
+
+// 'use client';
+
+// import React from 'react';
+// import useCartStore from '@/store/useCart';
+// import { ShoppingCart } from 'lucide-react';
+// import Link from 'next/link';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
+
+// export default function Food({ id, name, image, price, rating = 4.5 }) {
+//   const addItem = useCartStore((state) => state.addItem);
+//   const items = useCartStore((state) => state.items);
+//   const quantity = items.find((item) => item.id === id)?.quantity || 0;
+
+//   const handleAddToCart = () => {
+//     addItem({
+//       id,
+//       name,
+//       image,
+//       price,
+//       quantity: 1,
+//     });
+//   };
+
+//   const renderStars = () => {
+//     const fullStars = Math.floor(rating);
+//     const hasHalf = rating % 1 >= 0.25;
+//     const stars = [];
+
+//     for (let i = 0; i < fullStars; i++) {
+//       stars.push(<FontAwesomeIcon key={`full-${i}`} icon={faStar} style={{ color: '#ffc107', marginRight: 4 }} />);
+//     }
+
+//     if (hasHalf) {
+//       stars.push(<FontAwesomeIcon key="half" icon={faStarHalfAlt} style={{ color: '#ffc107', marginRight: 4 }} />);
+//     }
+
+//     return <div style={{ marginTop: '0.5rem' }}>{stars}</div>;
+//   };
+
+//   return (
+//    //  <div
+//    //    style={{
+//    //      position: 'relative',
+//    //      backgroundColor: '#222',
+//    //      color: 'white',
+//    //      fontFamily: 'Vazir',
+//    //      padding: '0.6rem',
+// 	// 	  paddingInline : "2.5rem",
+//    //    //   paddingTop: '2.5rem',
+//    //      borderRadius: '10px',
+//    //      maxWidth: '300px',
+//    //    }}
+//    //  >
+
+// 	<div
+// 		style={{
+// 			position: 'relative',
+// 			// background: 'linear-gradient(to bottom, hsl(0, 0%, 80%) 0%, #111111 30%)', // ✅ gradient
+// 			background: 'linear-gradient(to bottom, #2c2c2c 0%, #1f1f1f 40%, #151515 80%, #0d0d0d 100%)',
+// 			color: 'white',
+// 			fontFamily: 'Vazir',
+// 			padding: '0.6rem',
+// 			paddingInline: '2.5rem',
+// 			borderRadius: '10px',
+// 			width: '100%',
+// 			maxWidth: '500px',
+// 			minWidth: '150px',
+// 			margin: '0 auto',
+// 		}}
+// 		>
+
+
+//       <img
+//         src={image}
+//         alt={name}
+//         style={{
+//           position: 'absolute',
+//           top: '-30px',
+//           left: '-20px',
+//           width: '80px',
+//           height: '80px',
+//           borderRadius: '100px',
+//           objectFit: 'cover',
+//           boxShadow: '0 4px 10px rgba(0,0,0,0.5)',
+			 
+//         }}
+//       />
+
+//       <h3 style={{ margin: '0 0 0.5rem' }}>
+//         <Link
+//           href={`/food/${id}`}
+//           style={{
+//             color: 'hsl(52, 92%, 40%)',
+//             textDecoration: 'none',
+//             fontWeight: 'bold',
+//             fontSize: '1.1rem',
+//           }}
+//         >
+//           {name}
+//         </Link>
+//       </h3>
+
+//       {renderStars()}
+
+//       <div
+//         style={{
+//           display: 'flex',
+//           justifyContent: 'space-between',
+//           alignItems: 'center',
+//           marginTop: '1rem',
+//         }}
+//       >
+//         <p
+//           style={{
+//             margin: 0,
+//             color: '#aaa',
+//             fontWeight: '600',
+//             fontSize: '0.8rem',
+//           }}
+//         >
+//           {price.toLocaleString()} تومان
+//         </p>
+
+//         <button
+//           onClick={handleAddToCart}
+//           style={{
+//             background: 'hsl(52, 92%, 38%)',
+//             border: 'none',
+//             borderRadius: '6px',
+//             padding: '0.3rem 0.6rem',
+//             cursor: 'pointer',
+//             color: 'white',
+//             fontWeight: '800',
+//             fontSize: '0.9rem',
+//             display: 'flex',
+//             alignItems: 'center',
+//             justifyContent: 'center',
+//           }}
+//         >
+//           <ShoppingCart size={14} />
+//         </button>
+//       </div>
+//     </div>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+// 'use client';
+
+// import React from 'react';
+// import useCartStore from '@/store/useCart';
+// import { ShoppingCart } from 'lucide-react';
+// import Link from 'next/link';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
+
+// export default function Food({ id, name, image, price, rating = 4.5 }) {
+//   const addItem = useCartStore((state) => state.addItem);
+//   const items = useCartStore((state) => state.items);
+//   const quantity = items.find((item) => item.id === id)?.quantity || 0;
+
+//   const handleAddToCart = () => {
+//     addItem({
+//       id,
+//       name,
+//       image,
+//       price,
+//       quantity: 1,
+//     });
+//   };
+
+// //   const renderStars = () => {
+// //     const fullStars = Math.floor(rating);
+// //     const hasHalf = rating % 1 >= 0.25;
+// //     const stars = [];
+
+// //     for (let i = 0; i < fullStars; i++) {
+// //       stars.push(
+// //         <FontAwesomeIcon
+// //           key={`full-${i}`}
+// //           icon={faStar}
+// //           style={{ color: '#ffc107', marginRight: 4 }}
+// //         />
+// //       );
+// //     }
+
+// //     if (hasHalf) {
+// //       stars.push(
+// //         <FontAwesomeIcon
+// //           key="half"
+// //           icon={faStarHalfAlt}
+// //           style={{ color: '#ffc107', marginRight: 4 }}
+// //         />
+// //       );
+// //     }
+
+// //     return <div>{stars}</div>;
+// //   };
+
+// 		const renderStars = () => {
+// 		const fullStars = Math.floor(rating);
+// 		const hasHalf = rating % 1 >= 0.25;
+// 		const stars = [];
+
+// 		for (let i = 0; i < fullStars; i++) {
+// 			stars.push(
+// 				<FontAwesomeIcon
+// 				key={`full-${i}`}
+// 				icon={faStar}
+// 				style={{ color: '#ffc107' /* removed marginRight */ }}
+// 				/>
+// 			);
+// 		}
+
+// 		if (hasHalf) {
+// 			stars.push(
+// 				<FontAwesomeIcon
+// 				key="half"
+// 				icon={faStarHalfAlt}
+// 				style={{ color: '#ffc107' /* removed marginRight */ }}
+// 				/>
+// 			);
+// 		}
+
+// 		return <div style={{ display: 'flex', alignItems: 'center', fontSize: '0.6rem', gap: 1 }}>{stars}</div>;
+// 		};
+
+
+//   return (
+//     <div
+//       style={{
+//         position: 'relative',
+//         background:
+//           'linear-gradient(to bottom, #2c2c2c 0%, #1f1f1f 40%, #151515 80%, #0d0d0d 100%)',
+//         color: 'white',
+//         fontFamily: 'Vazir',
+//         padding: '0.6rem 2.5rem 3rem 2.5rem', // extra bottom padding for button & text
+//         borderRadius: '10px',
+//         width: '100%',
+//         maxWidth: '500px',
+//         minWidth: '150px',
+//         margin: '0 auto',
+//         boxSizing: 'border-box',
+//       }}
+//     >
+//       <img
+//         src={image}
+//         alt={name}
+//         style={{
+//           position: 'absolute',
+//           top: '-30px',
+//           left: '-20px',
+//           width: '80px',
+//           height: '80px',
+//           borderRadius: '100px',
+//           objectFit: 'cover',
+//           boxShadow: '0 4px 10px rgba(0,0,0,0.5)',
+// 			 border : "2px solid white"
+//         }}
+//       />
+
+//       {/* Centered food name */}
+//       <h3
+//         style={{
+//           margin: '0 0 0.5rem',
+//           display: 'flex',
+//           justifyContent: 'center',
+//           alignItems: 'center',
+//           height: '1.6rem',
+//           fontWeight: 'bold',
+//           fontSize: '1.1rem',
+//         }}
+//       >
+//         <Link
+//           href={`/food/${id}`}
+//           style={{
+//             color: 'hsl(52, 92%, 40%)',
+//             textDecoration: 'none',
+//             width: '100%',
+//             textAlign: 'center',
+// 				marginLeft : "10px"
+//           }}
+//         >
+//           {name}
+//         </Link>
+//       </h3>
+
+//       {/* Stars and price side by side */}
+//       <div
+//         style={{
+//           display: 'flex',
+//           justifyContent: 'space-between',
+//           alignItems: 'center',
+//           marginTop: '0.5rem',
+// 			 gap : "20px"
+//         }}
+//       >
+//         <p
+//           style={{
+//             margin: 0,
+//             color: '#aaa',
+//             fontWeight: '600',
+//             fontSize: '0.8rem',
+//           }}
+//         >
+//           {price.toLocaleString()} تومان
+//         </p>
+
+//         <div style={{ display: 'flex', alignItems: 'center', fontSize : "0.6rem", marginLeft : "10px" }}>{renderStars()}</div>
+//       </div>
+
+//       {/* Cart button partially out of box bottom-right */}
+//       <button
+//         onClick={handleAddToCart}
+//         style={{
+//           position: 'absolute',
+//           bottom: '-12px',
+//           right: '-15px',
+//           background: 'hsl(52, 92%, 38%)',
+//           border: 'none',
+//           borderRadius: '6px',
+//           padding: '0.4rem 0.7rem',
+//           cursor: 'pointer',
+//           color: 'white',
+//           fontWeight: '800',
+//           fontSize: '0.98rem',
+//           display: 'flex',
+//           alignItems: 'center',
+//           justifyContent: 'center',
+//           boxShadow: '0 2px 6px rgba(0,0,0,0.4)',
+//         }}
+//       >
+//         <ShoppingCart size={14} />
+//       </button>
+
+//       <p
+// 			style={{
+// 				position: 'absolute',
+// 				bottom: '10px',
+// 				left: '50%',
+// 				transform: 'translateX(-50%)',
+// 				margin: 0,
+// 				lineHeight: 1,
+// 				borderBottom: '1px solid gray',
+// 				fontWeight: '500',
+// 				cursor: 'pointer',
+// 				userSelect: 'none',
+// 				fontSize: '0.75rem',
+// 				color: 'gray',
+// 				whiteSpace: 'nowrap',
+
+// 			}}
+// 			>
+// 			سفارش دهید
+// 			</p>
+
+//     </div>
+//   );
+// }
+
+
+
+
+
+
+
+
+
 'use client';
 
 import React from 'react';
 import useCartStore from '@/store/useCart';
 import { ShoppingCart } from 'lucide-react';
 import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
+// import styles from '@/styles/food.module.css'; // Make sure this path matches your structure
+import styles from '@/styles/food.module.css'
 
-export default function Food({ id, name, image, price, supplies }) {
+export default function Food({ id, name, image, price, rating = 4.5 }) {
   const addItem = useCartStore((state) => state.addItem);
   const items = useCartStore((state) => state.items);
   const quantity = items.find((item) => item.id === id)?.quantity || 0;
@@ -1022,102 +1530,54 @@ export default function Food({ id, name, image, price, supplies }) {
     });
   };
 
+  const renderStars = () => {
+    const fullStars = Math.floor(rating);
+    const hasHalf = rating % 1 >= 0.25;
+    const stars = [];
+
+    for (let i = 0; i < fullStars; i++) {
+      stars.push(
+        <FontAwesomeIcon
+          key={`full-${i}`}
+          icon={faStar}
+          style={{ color: '#ffc107' }}
+        />
+      );
+    }
+
+    if (hasHalf) {
+      stars.push(
+        <FontAwesomeIcon
+          key="half"
+          icon={faStarHalfAlt}
+          style={{ color: '#ffc107' }}
+        />
+      );
+    }
+
+    return <div className={styles.rating}>{stars}</div>;
+  };
+
   return (
-    <div
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: '1rem',
-        padding: '0.5rem 1rem',
-        color: 'white',
-        fontFamily: 'Vazir',
-        maxWidth: '240px',
-        borderRadius: '7px',
-      }}
-    >
-      <img
-        src={image}
-        alt={name}
-        style={{
-          width: '80px',
-          height: '80px',
-          objectFit: 'cover',
-          borderRadius: '8px',
-        }}
-      />
+    <div className={styles.foodCard}>
+      <img src={image} alt={name} className={styles.foodImage} />
 
-      <div style={{ flex: 1 }}>
-        {/* Name and quantity badge row */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <h3 style={{ margin: 0 }}>
-            <Link
-              href={`/food/${id}`}
-              style={{
-                color: 'hsl(52, 92%, 40%)',
-                textDecoration: 'none',
-                fontWeight: 'bold',
-                fontSize: '1rem',
-              }}
-            >
-              {name}
-            </Link>
-          </h3>
+      <h3 className={styles.foodName}>
+        <Link href={`/food/${id}`} className={styles.foodNameLink}>
+          {name}
+        </Link>
+      </h3>
 
-          {quantity > 0 && (
-            <span
-              style={{
-                backgroundColor: 'hsl(52, 92%, 38%)',
-                color: 'black',
-                fontSize: '0.7rem',
-                padding: '3px 3px',
-                borderRadius: '12px',
-                fontWeight: '600',
-                minWidth: '24px',
-                textAlign: 'center',
-                marginRight: '8px',
-              }}
-            >
-              {quantity}
-            </span>
-          )}
-        </div>
-
-        <h6 style={{ margin: '4px 0', color: '#ccc', fontSize: '0.68rem', fontWeight: '500' }}>
-          {supplies?.join(', ')}
-        </h6>
-
-        {/* Price and Add-to-Cart button side by side */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '1.9rem',
-            marginTop: '4px',
-          }}
-        >
-          <p style={{ margin: 0, color: '#aaa', fontWeight: '600', fontSize: '0.8rem' }}>
-            {price.toLocaleString()} تومان
-          </p>
-          <button
-            onClick={handleAddToCart}
-            style={{
-              background: 'hsl(52, 92%, 38%)',
-              border: 'none',
-              borderRadius: '6px',
-              padding: '0.3rem 0.6rem',
-              cursor: 'pointer',
-              color: 'white',
-              fontWeight: '800',
-              fontSize: '0.9rem',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <ShoppingCart size={14} />
-          </button>
-        </div>
+      <div className={styles.priceRating}>
+        <p className={styles.price}>{price.toLocaleString()} تومان</p>
+        {renderStars()}
       </div>
+
+      <button onClick={handleAddToCart} className={styles.cartButton}>
+        <ShoppingCart size={14} />
+      </button>
+
+      <p className={styles.orderText}>سفارش دهید</p>
     </div>
   );
 }

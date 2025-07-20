@@ -17,9 +17,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: hsl(0, 0%, 10%);
+  background: inherit;
   z-index: 1;
   margin: 0;
+  /* color: hsl(0, 100%, 65%); */
 }
 
 .content {
@@ -128,4 +129,9 @@
   .content {
     justify-content: center;
   }
+
+    .bottom {
+    padding-bottom: 120px; /* تنظیم متناسب با ارتفاع فوتر در موبایل */
+  }
+
 }

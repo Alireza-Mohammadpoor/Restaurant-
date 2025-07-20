@@ -557,150 +557,230 @@
 
 
 
+// 'use client';
+
+// import useCartStore from '@/store/useCart';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faMinus, faPlus, faTrash, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+
+// export default function ShoppingCart() {
+//   const { items, increment, decrement, removeItem } = useCartStore();
+//   const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+//   return (
+//     <>
+//       <div className="shopping-cart">
+//         {/* Header */}
+//         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
+//           <FontAwesomeIcon icon={faShoppingCart} style={{ marginLeft: '0.5rem', color: 'hsl(52, 92%, 43%)' }} />
+//           <h3 style={{ fontSize: '1.5rem', margin: 0 }}>سبد خرید شما</h3>
+//         </div>
+
+//         {/* Empty Cart */}
+//         {items.length === 0 ? (
+//           <p style={{ color: '#aaa', textAlign: 'center', padding: '2rem 0' }}>
+//             🧺 هنوز هیچ آیتمی به سبد خرید اضافه نکردید!<br />
+            
+//           </p>
+//         ) : (
+//           <ul style={{ padding: 0, margin: 0, listStyle: 'none' }}>
+//             {items.map((item) => (
+//               <li
+//                 key={item.id}
+//                 style={{
+//                   marginBottom: '1rem',
+//                   display: 'flex',
+//                   alignItems: 'center',
+//                   gap: '0.75rem',
+//                   background: '#2c2c2c',
+//                   padding: '0.5rem',
+//                   borderRadius: '10px',
+//                 }}
+//               >
+//                 <img
+//                   src={item.image}
+//                   alt={item.name}
+//                   style={{
+//                     width: '60px',
+//                     height: '60px',
+//                     borderRadius: '10px',
+//                     objectFit: 'cover',
+//                   }}
+//                 />
+
+//                 <div style={{ flex: 1 }}>
+//                   <div style={{ fontWeight: 'bold', fontSize: '1rem' }}>{item.name}</div>
+//                   <div style={{ fontSize: '0.85rem', color: '#ccc' }}>
+//                     {item.price.toLocaleString()} × {item.quantity} ={' '}
+//                     {(item.price * item.quantity).toLocaleString()} تومان
+//                   </div>
+//                 </div>
+
+//                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+//                   <button onClick={() => decrement(item.id)} style={iconButton}>
+//                     <FontAwesomeIcon icon={faMinus} />
+//                   </button>
+//                   <span>{item.quantity}</span>
+//                   <button onClick={() => increment(item.id)} style={iconButton}>
+//                     <FontAwesomeIcon icon={faPlus} />
+//                   </button>
+//                   <button onClick={() => removeItem(item.id)} style={trashButton}>
+//                     <FontAwesomeIcon icon={faTrash} />
+//                   </button>
+//                 </div>
+//               </li>
+//             ))}
+//           </ul>
+//         )}
+
+//         {/* Total */}
+//         <div
+//           style={{
+//             marginTop: '1.5rem',
+//             borderTop: '1px solid #444',
+//             paddingTop: '1rem',
+//             textAlign: 'center',
+//           }}
+//         >
+//           <strong style={{ fontSize: '1.2rem', color: 'white' }}>
+//             💰 جمع کل : {total.toLocaleString()} تومان
+//           </strong>
+//           <p style={{ fontSize: '0.85rem', marginTop: '0.5rem', color: '#aaa' }}>
+//             از خرید شما سپاسگزاریم! ❤️
+//           </p>
+//         </div>
+//       </div>
+
+//       {/* Responsive Styling */}
+//       <style jsx>{`
+// 			.shopping-cart {
+// 				background: #1e1e1e;
+// 				color: #fff;
+// 				padding: 1.5rem;
+// 				border-radius: 20px;
+// 				box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+// 				width: 100%;
+// 				max-width: 480px;
+// 				margin: 2rem auto; /* centers the cart */
+// 				font-family: Vazir;
+// 			}
+
+// 			@media (max-width: 768px) {
+// 				.shopping-cart {
+// 					width: 90%;
+// 					margin: 1rem auto;
+// 				}
+// 			}
+// 			`}</style>
+
+// 				</>
+// 			);
+// 			}
+
+// // Button styles
+// const iconButton = {
+//   background: '#333',
+//   border: 'none',
+//   borderRadius: '6px',
+//   padding: '4px 6px',
+//   color: '#fff',
+//   cursor: 'pointer',
+//   transition: 'background 0.2s',
+// };
+
+// const trashButton = {
+//   background: '#f44336',
+//   border: 'none',
+//   borderRadius: '6px',
+//   padding: '4px 6px',
+//   color: 'white',
+//   cursor: 'pointer',
+//   marginLeft: '4px',
+// };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 'use client';
 
 import useCartStore from '@/store/useCart';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMinus, faPlus, faTrash, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import {
+  faMinus,
+  faPlus,
+  faTrash,
+  faShoppingCart,
+} from '@fortawesome/free-solid-svg-icons';
+// import styles from '@/styles/shoppingcart.module.css'; // Adjust path as needed
+import styles from '@/styles/card.module.css'
 
 export default function ShoppingCart() {
   const { items, increment, decrement, removeItem } = useCartStore();
   const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
-    <>
-      <div className="shopping-cart">
-        {/* Header */}
-        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
-          <FontAwesomeIcon icon={faShoppingCart} style={{ marginLeft: '0.5rem', color: 'hsl(52, 92%, 43%)' }} />
-          <h3 style={{ fontSize: '1.5rem', margin: 0 }}>سبد خرید شما</h3>
-        </div>
-
-        {/* Empty Cart */}
-        {items.length === 0 ? (
-          <p style={{ color: '#aaa', textAlign: 'center', padding: '2rem 0' }}>
-            🧺 هنوز هیچ آیتمی به سبد خرید اضافه نکردید!<br />
-            
-          </p>
-        ) : (
-          <ul style={{ padding: 0, margin: 0, listStyle: 'none' }}>
-            {items.map((item) => (
-              <li
-                key={item.id}
-                style={{
-                  marginBottom: '1rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.75rem',
-                  background: '#2c2c2c',
-                  padding: '0.5rem',
-                  borderRadius: '10px',
-                }}
-              >
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  style={{
-                    width: '60px',
-                    height: '60px',
-                    borderRadius: '10px',
-                    objectFit: 'cover',
-                  }}
-                />
-
-                <div style={{ flex: 1 }}>
-                  <div style={{ fontWeight: 'bold', fontSize: '1rem' }}>{item.name}</div>
-                  <div style={{ fontSize: '0.85rem', color: '#ccc' }}>
-                    {item.price.toLocaleString()} × {item.quantity} ={' '}
-                    {(item.price * item.quantity).toLocaleString()} تومان
-                  </div>
-                </div>
-
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                  <button onClick={() => decrement(item.id)} style={iconButton}>
-                    <FontAwesomeIcon icon={faMinus} />
-                  </button>
-                  <span>{item.quantity}</span>
-                  <button onClick={() => increment(item.id)} style={iconButton}>
-                    <FontAwesomeIcon icon={faPlus} />
-                  </button>
-                  <button onClick={() => removeItem(item.id)} style={trashButton}>
-                    <FontAwesomeIcon icon={faTrash} />
-                  </button>
-                </div>
-              </li>
-            ))}
-          </ul>
-        )}
-
-        {/* Total */}
-        <div
-          style={{
-            marginTop: '1.5rem',
-            borderTop: '1px solid #444',
-            paddingTop: '1rem',
-            textAlign: 'center',
-          }}
-        >
-          <strong style={{ fontSize: '1.2rem', color: 'white' }}>
-            💰 جمع کل : {total.toLocaleString()} تومان
-          </strong>
-          <p style={{ fontSize: '0.85rem', marginTop: '0.5rem', color: '#aaa' }}>
-            از خرید شما سپاسگزاریم! ❤️
-          </p>
-        </div>
+    <div className={styles.cartContainer}>
+      {/* Header */}
+      <div className={styles.cartHeader}>
+        <FontAwesomeIcon icon={faShoppingCart} className={styles.cartIcon} />
+        <h3 className={styles.cartTitle}>سبد خرید شما</h3>
       </div>
 
-      {/* Responsive Styling */}
-      <style jsx>{`
-			.shopping-cart {
-				background: #1e1e1e;
-				color: #fff;
-				padding: 1.5rem;
-				border-radius: 20px;
-				box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-				width: 100%;
-				max-width: 480px;
-				margin: 2rem auto; /* centers the cart */
-				font-family: Vazir;
-			}
+      {/* Empty State */}
+      {items.length === 0 ? (
+        <p className={styles.emptyText}>
+          🧺 هنوز هیچ آیتمی به سبد خرید اضافه نکردید!
+        </p>
+      ) : (
+        <ul className={styles.cartList}>
+          {items.map((item) => (
+            <li key={item.id} className={styles.cartItem}>
+              <img src={item.image} alt={item.name} className={styles.itemImage} />
 
-			@media (max-width: 768px) {
-				.shopping-cart {
-					width: 90%;
-					margin: 1rem auto;
-				}
-			}
-			`}</style>
+              <div className={styles.itemContent}>
+                <div className={styles.nameAndControls}>
+                  <div className={styles.itemName}>{item.name}</div>
+                  <div className={styles.controls}>
+                    <button onClick={() => decrement(item.id)} className={styles.iconButton}>
+                      <FontAwesomeIcon icon={faMinus} />
+                    </button>
+                    <span>{item.quantity}</span>
+                    <button onClick={() => increment(item.id)} className={styles.iconButton}>
+                      <FontAwesomeIcon icon={faPlus} />
+                    </button>
+                    <button onClick={() => removeItem(item.id)} className={styles.trashButton}>
+                      <FontAwesomeIcon icon={faTrash} />
+                    </button>
+                  </div>
+                </div>
+                <div className={styles.itemPrice}>
+                  {item.price.toLocaleString()} × {item.quantity} ={' '}
+                  {(item.price * item.quantity).toLocaleString()} تومان
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
 
-				</>
-			);
-			}
-
-// Button styles
-const iconButton = {
-  background: '#333',
-  border: 'none',
-  borderRadius: '6px',
-  padding: '4px 6px',
-  color: '#fff',
-  cursor: 'pointer',
-  transition: 'background 0.2s',
-};
-
-const trashButton = {
-  background: '#f44336',
-  border: 'none',
-  borderRadius: '6px',
-  padding: '4px 6px',
-  color: 'white',
-  cursor: 'pointer',
-  marginLeft: '4px',
-};
-
-
-
-
-
-
-
+      {/* Total */}
+      <div className={styles.cartTotal}>
+        <strong>
+          💰 جمع کل : {total.toLocaleString()} تومان
+        </strong>
+        <p>از خرید شما سپاسگزاریم! ❤️</p>
+      </div>
+    </div>
+  );
+}

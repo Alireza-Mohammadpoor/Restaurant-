@@ -3,7 +3,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -32,9 +32,10 @@ body {
 body {
   font-family: 'Vazir', Arial, Helvetica, sans-serif;
   color: var(--foreground);
-	background-color: hsl(0, 0%, 10%);
+	background-color: hsl(0, 0%, 0%);
   background-size: cover;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
+  padding: 0;
 }

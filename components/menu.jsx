@@ -1000,7 +1000,9 @@ export default function Menu() {
                   borderRadius: '0.5rem',
                   cursor: 'pointer',
                   fontFamily: 'Vazir',
+						fontWeight : "600"
                 }}
+					 className={styles.cat}
               >
                 {cat}
               </button>
@@ -1045,7 +1047,7 @@ export default function Menu() {
                   <div
                     key={item.id + index}
                     className={styles.foodWrapper}
-                    style={{ border: '1px hsl(0, 0%, 29%) solid' }}
+                  //   style={{ border: '1px hsl(0, 0%, 29%) solid' }}
                   >
                     <Food {...item} onAddToCart={() => handleAddToCart(item)} />
                   </div>
@@ -1062,31 +1064,27 @@ export default function Menu() {
         </div>
       </div>
 
-      {/* ✅ Mobile Footer Outside Container for Full Width */}
-      <footer className={styles.mobileFooter}>
-        <button
-          onClick={() => setActiveTab('cart')}
-          className={activeTab === 'cart' ? styles.activeTab : ''}
-        >
-          <img
-            src="/img/cart.png"
-            alt="menu"
-            style={{ width: '25px', height: '25px', filter: 'brightness(0) invert(1)' }}
-          />
-          <h1 style={{ fontSize: '1rem', fontFamily: 'Vazir' }}>مشاهده سفارش</h1>
-        </button>
-        <button
-          onClick={() => setActiveTab('menu')}
-          className={activeTab === 'menu' ? styles.activeTab : ''}
-        >
-          <img
-            src="/img/list.png"
-            alt="cart"
-            style={{ width: '25px', height: '25px', filter: 'brightness(0) invert(1)' }}
-          />
-          <h1 style={{ fontSize: '1rem', fontFamily: 'Vazir' }}>منو</h1>
-        </button>
-      </footer>
+      
+
+			{/* ✅ Mobile Footer Outside Container for Full Width */}
+			<footer className={styles.mobileFooter}>
+			<button
+				onClick={() => setActiveTab('cart')}
+				className={`${styles.footerButton} ${activeTab === 'cart' ? styles.activeTab : ''}`}
+			>
+				<img src="/img/cart.png" alt="Cart" />
+				<span style={{fontFamily : "Vazir"}}>مشاهده سفارش</span>
+			</button>
+			<button
+				onClick={() => setActiveTab('menu')}
+				className={`${styles.footerButton} ${activeTab === 'menu' ? styles.activeTab : ''}`}
+			>
+				<img src="/img/list.png" alt="Menu" />
+				<span style={{fontFamily : "Vazir"}}>منو</span>
+			</button>
+			</footer>
+
+
     </>
   );
 }
