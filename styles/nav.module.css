@@ -78,7 +78,7 @@
 
 @media (max-width: 600px) {
   .logo {
-    width: 80px;
+    width: 160px;
   }
 
   .welcome h1 {
@@ -103,7 +103,7 @@
 	 gap: 0;
   }
 
-  .welcome {
+  /* .welcome {
     padding-top: 0.5rem;
-  }
+  } */
 }
