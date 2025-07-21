@@ -1,59 +1,50 @@
 .logoWelcomeWrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  /* No flex here */
+  position: relative;
   width: 100%;
-  padding: 1rem 0;
+  padding: 0.5rem 1rem;
+  margin-bottom: 2rem;
 }
 
-.logoTextContainer {
-  display: flex;
-  align-items: start;
-  gap: 19rem;
-  flex-wrap: wrap; /* Allows wrapping on small screens */
-  justify-content: left;
-  text-align: left;
-}
-
+/* Logo container normal block */
 .logoContainer {
-  flex-shrink: 0;
+  width: 160px;
+  margin-bottom: 1rem; /* space for mobile stacked */
 }
-
-.pacifico {
-  font-family: 'Pacifico', cursive !important;
-}
-
 
 .logo {
-  width: 160px;
+  width: 100%;
   filter: brightness(0) invert(1);
 }
 
+/* Welcome text */
 .welcome {
-  opacity: 0;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 600px;
+  color: aliceblue;
+  text-align: center;
+  opacity: 1;
   animation: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  z-index: 10;
 }
 
-.slideDown {
-  animation: slideDown 0.8s ease-out forwards;
-}
 
-@keyframes slideDown {
-  from {
-    transform: translateY(-60px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
+
 
 .welcome h1 {
   font-weight: 600;
   margin: 0;
   font-size: 1.6rem;
   text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+.slideDown {
+  animation: slideDown 0.8s ease-out forwards;
 }
 
 .subtitle {
@@ -67,7 +58,7 @@
 .subtitle p {
   font-size: 0.85rem;
   margin: 0;
-  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.4);
+  text-shadow: 0 1px 3px hsla(0, 0%, 100%, 0.9);
 }
 
 .subtitle img {
@@ -76,13 +67,26 @@
   filter: brightness(0) invert(1);
 }
 
+/* Responsive: stack vertically on mobile */
 @media (max-width: 600px) {
-  .logo {
-    width: 160px;
+  .logoWelcomeWrapper {
+    padding: 1rem 0;
+  }
+
+  .logoContainer {
+    width: 120px;
+    margin-bottom: 1rem;
+  }
+
+  .welcome {
+    position: static;
+    transform: none;
+    text-align: center;
+    margin: 0 auto;
   }
 
   .welcome h1 {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .subtitle p {
@@ -90,20 +94,7 @@
   }
 
   .subtitle img {
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
   }
-
-  .logoTextContainer {
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-	 align-items: center;
-	 gap: 0;
-  }
-
-  /* .welcome {
-    padding-top: 0.5rem;
-  } */
 }

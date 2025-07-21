@@ -1939,96 +1939,145 @@
 
 
 
+// "use client";
+
+// import { useRef, useEffect, useState, Suspense } from "react";
+// import { Canvas, useFrame } from "@react-three/fiber";
+// import { OrbitControls, useGLTF, Html } from "@react-three/drei";
+// import { Pacifico } from "next/font/google";
+// import LetterAvatars from "./avatars";
+// import StarryBackground from "./StarryBackground";
+// import styles from '@/styles/nav.module.css';
+// import Photos from "./photos";
+
+// const pacifico = Pacifico({ subsets: ["latin"], weight: "400", display: "swap" });
+
+// function PowderParticle({ position, speed }) {
+// 	const ref = useRef();
+// 	useFrame(() => {
+// 		if (!ref.current) return;
+// 		ref.current.position.y -= speed;
+// 		if (ref.current.position.y < 0) {
+// 			ref.current.position.y = 5 + Math.random() * 2;
+// 			ref.current.position.x = (Math.random() - 0.5) * 6;
+// 			ref.current.position.z = (Math.random() - 0.5) * 6;
+// 		}
+// 	});
+// 	return (
+// 		<mesh ref={ref} position={position}>
+// 			<sphereGeometry args={[0.05, 6, 6]} />
+// 			<meshStandardMaterial color="#f6e27f" emissive="#f6e27f" emissiveIntensity={0.3} />
+// 		</mesh>
+// 	);
+// }
+
+// function PowderSystem({ count = 100 }) {
+// 	const particles = Array.from({ length: count }, (_, i) => ({
+// 		key: i,
+// 		position: [
+// 			(Math.random() - 0.5) * 6,
+// 			Math.random() * 5 + 1,
+// 			(Math.random() - 0.5) * 6,
+// 		],
+// 		speed: 0.003 + Math.random() * 0.002,
+// 	}));
+// 	return <>{particles.map(({ key, position, speed }) => <PowderParticle key={key} position={position} speed={speed} />)}</>;
+// }
+
+// function FloatingBurger() {
+// 	const ref = useRef();
+// 	const { scene } = useGLTF("/models/burger.glb");
+// 	useFrame(({ clock }) => {
+// 		if (ref.current) {
+// 			ref.current.rotation.y = clock.getElapsedTime() * 0.4;
+// 			ref.current.position.y = 0.15 + Math.sin(clock.getElapsedTime() * 2) * 0.1;
+// 		}
+// 	});
+// 	return <primitive ref={ref} object={scene} scale={0.6} />;
+// }
+
+// export default function NavBar() {
+// 	const [showText, setShowText] = useState(false);
+// 	useEffect(() => setShowText(true), []);
+
+// 	return (
+// 		<>
+// 			<StarryBackground />
+
+			
+// 			<div className={styles.logoWelcomeWrapper}>
+// 				<div className={styles.logoTextContainer}>
+// 					<div className={styles.logoContainer}>
+// 						<img
+// 						src="/img/Brown_Simple_Circle_Restaurant_Logo-removebg-preview.png"
+// 						alt="logo"
+// 						className={styles.logo}
+// 						/>
+// 					</div>
+
+// 					<div className={`${styles.welcome} ${showText ? styles.slideDown : ''}`}>
+// 						<h1 className={`${pacifico.className} ${styles.pacifico}`}>welcome to KFC's restaurant</h1>
+// 						<div className={styles.subtitle}>
+// 						<p className={`${pacifico.className} ${styles.pacifico}`}>Experience the best with us</p>
+// 						<img src="/img/earth.png" alt="img" />
+// 						</div>
+// 					</div>
+// 				</div>
+// 				</div>
+
+// 								<div className={styles.photos}>
+// 				<Photos />
+// 				</div>
+			
+// 		</>
+// 	);
+// }
+
+
+
 "use client";
 
-import { useRef, useEffect, useState, Suspense } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, useGLTF, Html } from "@react-three/drei";
+import { useRef, useEffect, useState } from "react";
 import { Pacifico } from "next/font/google";
-import LetterAvatars from "./avatars";
 import StarryBackground from "./StarryBackground";
-import styles from '@/styles/nav.module.css';
 import Photos from "./photos";
+import styles from '@/styles/nav.module.css';
 
 const pacifico = Pacifico({ subsets: ["latin"], weight: "400", display: "swap" });
 
-function PowderParticle({ position, speed }) {
-	const ref = useRef();
-	useFrame(() => {
-		if (!ref.current) return;
-		ref.current.position.y -= speed;
-		if (ref.current.position.y < 0) {
-			ref.current.position.y = 5 + Math.random() * 2;
-			ref.current.position.x = (Math.random() - 0.5) * 6;
-			ref.current.position.z = (Math.random() - 0.5) * 6;
-		}
-	});
-	return (
-		<mesh ref={ref} position={position}>
-			<sphereGeometry args={[0.05, 6, 6]} />
-			<meshStandardMaterial color="#f6e27f" emissive="#f6e27f" emissiveIntensity={0.3} />
-		</mesh>
-	);
-}
-
-function PowderSystem({ count = 100 }) {
-	const particles = Array.from({ length: count }, (_, i) => ({
-		key: i,
-		position: [
-			(Math.random() - 0.5) * 6,
-			Math.random() * 5 + 1,
-			(Math.random() - 0.5) * 6,
-		],
-		speed: 0.003 + Math.random() * 0.002,
-	}));
-	return <>{particles.map(({ key, position, speed }) => <PowderParticle key={key} position={position} speed={speed} />)}</>;
-}
-
-function FloatingBurger() {
-	const ref = useRef();
-	const { scene } = useGLTF("/models/burger.glb");
-	useFrame(({ clock }) => {
-		if (ref.current) {
-			ref.current.rotation.y = clock.getElapsedTime() * 0.4;
-			ref.current.position.y = 0.15 + Math.sin(clock.getElapsedTime() * 2) * 0.1;
-		}
-	});
-	return <primitive ref={ref} object={scene} scale={0.6} />;
-}
-
 export default function NavBar() {
-	const [showText, setShowText] = useState(false);
-	useEffect(() => setShowText(true), []);
+  const [showText, setShowText] = useState(false);
+  useEffect(() => setShowText(true), []);
 
-	return (
-		<>
-			<StarryBackground />
+  return (
+    <>
+      <StarryBackground />
 
-			
-			<div className={styles.logoWelcomeWrapper}>
-				<div className={styles.logoTextContainer}>
-					<div className={styles.logoContainer}>
-						<img
-						src="/img/Brown_Simple_Circle_Restaurant_Logo-removebg-preview.png"
-						alt="logo"
-						className={styles.logo}
-						/>
-					</div>
+      <div className={styles.logoWelcomeWrapper}>
+        <div className={styles.logoContainer}>
+          <img
+            src="/img/Brown_Simple_Circle_Restaurant_Logo-removebg-preview.png"
+            alt="logo"
+            className={styles.logo}
+          />
+        </div>
 
-					<div className={`${styles.welcome} ${showText ? styles.slideDown : ''}`}>
-						<h1 className={`${pacifico.className} ${styles.pacifico}`}>welcome to KFC's restaurant</h1>
-						<div className={styles.subtitle}>
-						<p className={`${pacifico.className} ${styles.pacifico}`}>Experience the best with us</p>
-						<img src="/img/earth.png" alt="img" />
-						</div>
-					</div>
-				</div>
-				</div>
+        <div className={`${styles.welcome} ${showText ? styles.slideDown : ''}`}>
+          <h1 className={`${pacifico.className} ${styles.pacifico}`}>
+            Welcome to KFC's restaurant
+          </h1>
+          <div className={styles.subtitle}>
+            <p className={`${pacifico.className} ${styles.pacifico}`}>
+              Experience the best with us
+            </p>
+            <img src="/img/earth.png" alt="img" />
+          </div>
+        </div>
+      </div>
 
-								<div className={styles.photos}>
-				<Photos />
-				</div>
-			
-		</>
-	);
+      <div className={styles.photos}>
+        <Photos />
+      </div>
+    </>
+  );
 }
