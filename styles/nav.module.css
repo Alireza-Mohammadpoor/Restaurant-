@@ -9,7 +9,7 @@
 .logoTextContainer {
   display: flex;
   align-items: start;
-  gap: 16rem;
+  gap: 19rem;
   flex-wrap: wrap; /* Allows wrapping on small screens */
   justify-content: left;
   text-align: left;
