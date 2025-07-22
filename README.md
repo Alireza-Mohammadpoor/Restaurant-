@@ -1,40 +1,45 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🍽️ Restaurant Nine
 
-## Getting Started
+**Restaurant Nine** is a stylish, fully responsive restaurant website showcasing menu items, chef’s specialties, and customer reviews—all designed for delightful user experience.
 
-First, run the development server:
+---
 
+## 🚀 Features
+
+- **Responsive Design**: Seamless viewing on both desktop and mobile via CSS Grid and Flexbox.
+- **Menu Display**: Elegant presentation of dishes with images, descriptions, and prices.
+- **Special Sections**:
+  - Featured or seasonal dishes highlight hero-style.
+  - Customer testimonial carousel.
+  - Reservation call-to-action and contact form (or links).
+- **Reusable Components**: Modular structure using React components for menu cards, review sliders, navigation, and footer.
+- **Interactive UI**: Smooth hover effects and clean navigation enhance user engagement.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React.js  
+- **Styling**: Tailwind CSS (or CSS Modules)  
+- **State Management & Routing**: React Hooks (and React Router if used)  
+- **Deployment**: Vercel (CI/CD, global CDN, SSL)
+
+---
+
+## 🧩 Architecture
+
+The site is structured into modular React components:
+- `Navbar`, `Hero`, `MenuList`, `MenuItemCard`, `Testimonials`, `Footer`
+
+Components are responsive by default and designed for reusability and easy extension.
+
+---
+
+## 📦 Setup & Deployment
+
+Clone the repo and install dependencies:
 ```bash
+git clone https://github.com/yourusername/restaurant-nine.git
+cd restaurant-nine
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
-# Restaurant-
->>>>>>> 7e9962e4a86093abdeb904da38686387fd0b58b4
