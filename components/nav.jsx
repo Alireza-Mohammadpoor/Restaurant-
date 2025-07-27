@@ -92,7 +92,7 @@ export default function NavBar() {
         </div> */}
       {/* </div> */}
 
-					<div style={{ backgroundColor: "black" }}>
+					{/* <div style={{ backgroundColor: "black" }}>
 				<img
 					src="/img/Recipe.png"
 					alt="recipe"
@@ -105,7 +105,57 @@ export default function NavBar() {
 						boxSizing: "border-box"
 					}}
 				/>
-				</div>
+				</div> */}
+
+				{/* <div
+					style={{
+						backgroundColor: "black",
+						// padding: "1rem",
+						maxWidth: "100%",
+						boxSizing: "border-box"
+					}}
+					>
+					<img
+						src="/img/Recipe.png"
+						alt="recipe"
+						style={{
+							width: "100%",
+							height: "auto",
+							// border: "1px solid white",
+							borderRadius: "8px",
+							display: "block",
+							maxWidth: "100%",
+							boxSizing: "border-box",
+							margin: "0 auto"
+						}}
+					/>
+					</div> */}
+
+
+					<div
+						style={{
+							backgroundColor: "black",
+							// padding: "1rem",
+							boxSizing: "border-box",
+							display: "flex",
+							justifyContent: "center",  // center the image horizontally
+						}}
+						>
+						<img
+							src="/img/Recipe.png"
+							alt="recipe"
+							style={{
+								width: "100%",        // full width on small screens
+								maxWidth: "650px",    // max width on larger screens (desktop)
+								height: "auto",
+								// border: "1px solid white",
+								borderRadius: "8px",
+								boxSizing: "border-box",
+							}}
+						/>
+						</div>
+
+
 
 				<div
 					style={{
